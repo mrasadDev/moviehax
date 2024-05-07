@@ -1,17 +1,18 @@
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import "./style.scss";
 
 const Genres = ({ data }) => {
-  const { genres } = useSelector((state) => state.home);
-
+  const { generes } = useSelector((state) => state.home);
+  console.log(data, generes, "Hello");
   return (
     <div className="genres">
       {data?.map((g) => {
-        if (!genres[g]?.name) return;
+        if (!generes[g]?.name) return;
         return (
           <div key={g} className="genre">
-            {genres[g]?.name}
+            {generes[g]?.name}
           </div>
         );
       })}
